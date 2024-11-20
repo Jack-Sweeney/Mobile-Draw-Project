@@ -1,0 +1,14 @@
+﻿  main.cpp
+D:\MobileGP-Project\raylib-quickstart-main\src\main.cpp(44,48): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+D:\MobileGP-Project\raylib-quickstart-main\src\main.cpp(44,48): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\MobileGP-Project\raylib-quickstart-main\src\main.cpp(51,53): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+D:\MobileGP-Project\raylib-quickstart-main\src\main.cpp(51,53): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\MobileGP-Project\raylib-quickstart-main\src\main.cpp(111,46): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+D:\MobileGP-Project\raylib-quickstart-main\src\main.cpp(111,46): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\MobileGP-Project\raylib-quickstart-main\src\main.cpp(111,69): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+D:\MobileGP-Project\raylib-quickstart-main\src\main.cpp(111,69): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\MobileGP-Project\raylib-quickstart-main\src\main.cpp(126,42): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+D:\MobileGP-Project\raylib-quickstart-main\src\main.cpp(126,42): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\MobileGP-Project\raylib-quickstart-main\src\main.cpp(126,65): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+D:\MobileGP-Project\raylib-quickstart-main\src\main.cpp(126,65): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  raylib-quickstart-main.vcxproj -> D:\MobileGP-Project\raylib-quickstart-main\bin\Debug\raylib-quickstart-main.exe
