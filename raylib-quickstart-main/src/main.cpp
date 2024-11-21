@@ -28,6 +28,9 @@ int main() {
     Vector2 rectEnd = { 0 };
     bool drawing = true;
     bool selectionMode = false;
+    Rectangle selectionRect = { 0, 0, 0, 0 };
+    bool selectionActive = false;
+
 
     // Define a simple color palette
     Color palette[] = { BLACK, RED, GREEN, BLUE, YELLOW, ORANGE, PURPLE, MAROON, BROWN, DARKBLUE};
@@ -53,30 +56,61 @@ int main() {
         {
             selectionMode = !selectionMode;
         }
+        //Draw selection rectangle outline
         if (selectionMode == true)
         {
             drawing = false;
 
-            if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+            if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) 
+            {
                 
                 rectStart = GetMousePosition();
             }
 
-            if (IsMouseButtonDown(MOUSE_LEFT_BUTTON)) {
+            if (IsMouseButtonDown(MOUSE_LEFT_BUTTON)) 
+            {
                
                 rectEnd = GetMousePosition();
 
                
-                Rectangle currentRect = {
-                    fminf(rectStart.x, rectEnd.x),
-                    fminf(rectStart.y, rectEnd.y),
-                    fabsf(rectEnd.x - rectStart.x),
-                    fabsf(rectEnd.y - rectStart.y)
-                };
+                selectionRect.x = fminf(rectStart.x, rectEnd.x);
+                selectionRect.y = fminf(rectStart.y, rectEnd.y);
+                selectionRect.width = fabsf(rectEnd.x - rectStart.x);
+                selectionRect.height = fabsf(rectEnd.y - rectStart.y);
+
+                selectionActive = true; 
 
             
-                DrawRectangleLinesEx(currentRect, 2, BLUE);
+                DrawRectangleLinesEx(selectionRect, 2, BLUE);
             }
+            if (IsMouseButtonReleased(MOUSE_LEFT_BUTTON))
+            {
+               
+                selectionActive = true;
+            }
+           
+            ///Darw Rectangle code
+            if (IsKeyDown(KEY_F)) 
+            {
+                if (selectionActive == true) {
+                    
+                    if (selectionActive) {
+                        if (rectCount < MAX_RECTS) {
+                            rectangles[rectCount].position.x = selectionRect.x;
+                            rectangles[rectCount].position.y = selectionRect.y;
+                            rectangles[rectCount].width = selectionRect.width;
+                            rectangles[rectCount].height = selectionRect.height;
+                            rectangles[rectCount].color = currentColor;
+                            rectCount++;
+                        }
+                        selectionActive = false;  
+                    }
+                }
+            }
+
+
+
+
         }
         else
         {
@@ -125,11 +159,13 @@ int main() {
         for (int i = 0; i < paletteSize; i++) {
             Rectangle colorButton = { 10 + 40 * i, screenHeight - 40, 30, 30 };
             DrawRectangleRec(colorButton, palette[i]);
-            if (i == selectedColor) {
-                DrawRectangleLinesEx(colorButton, 2, BLACK);  // Highlight selected color
-            }
+            
         }
 
+        if (selectionActive == true)
+        {
+            DrawRectangleLinesEx(selectionRect, 2, BLACK);  // Highlight selected color
+        }
         //CheckCollisionPointRec(mousePos, boundingBox);
         // bool insideDrawArea
 
@@ -139,6 +175,8 @@ int main() {
         for (int i = 0; i < rectCount; i++) {
             DrawRectangleRec({ rectangles[i].position.x, rectangles[i].position.y, rectangles[i].width, rectangles[i].height }, rectangles[i].color);
         }
+
+        
 
         // Draw the current rectangle if drawing
 
