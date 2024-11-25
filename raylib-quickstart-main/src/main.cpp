@@ -120,6 +120,9 @@ int main() {
         //Draw selection rectangle outline
         if (selectionMode == true)
         {
+
+            DrawText("Press F to fill, C to copy and V to paste", 450, 770, 24, WHITE); 
+          
             drawing = false;
             
             if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) 
@@ -172,14 +175,16 @@ int main() {
             // Copy operation
             if (rectStart.y < 700)
             {
-                if (IsKeyPressed(KEY_C) && selectionActive == true) {
+                if (IsKeyPressed(KEY_C) && selectionActive == true) 
+                {
                     copyCount = 0;
                     for (int i = 0; i < rectCount; i++) {
                         Rect rect = rectangles[i];
                         if (rect.position.x >= selectionRect.x &&
                             rect.position.y >= selectionRect.y &&
                             rect.position.x + rect.width <= selectionRect.x + selectionRect.width &&
-                            rect.position.y + rect.height <= selectionRect.y + selectionRect.height) {
+                            rect.position.y + rect.height <= selectionRect.y + selectionRect.height) 
+                        {
 
                             if (copyCount < MAX_RECTS) {
                                 // Adjust position relative to the selection rectangle
@@ -195,8 +200,10 @@ int main() {
                 }
 
                 // Paste operation
-                if (IsKeyPressed(KEY_V) && selectionActive  == true) {
-                    for (int i = 0; i < copyCount; i++) {
+                if (IsKeyPressed(KEY_V) && selectionActive  == true) 
+                {
+                    for (int i = 0; i < copyCount; i++) 
+                    {
                         if (rectCount < MAX_RECTS) {
                             Rect copied = copyRect[i];
 
@@ -255,7 +262,7 @@ int main() {
        
         // Draw
         BeginDrawing();
-        ClearBackground(WHITE);
+        ClearBackground(WHITE); 
 
          
         

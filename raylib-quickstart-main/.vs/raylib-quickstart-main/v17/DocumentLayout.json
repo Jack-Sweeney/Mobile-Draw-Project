@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Robin\\OneDrive\\Desktop\\Mobile-Draw-Project\\raylib-quickstart-main\\",
+  "WorkspaceRootPath": "C:\\Users\\gameuser\\Downloads\\Mobile-Draw-Project\\raylib-quickstart-main\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7223710C-5E1D-9A5E-478A-306F332300CB}|build\\build_files\\raylib-quickstart-main.vcxproj|C:\\Users\\Robin\\OneDrive\\Desktop\\Mobile-Draw-Project\\raylib-quickstart-main\\src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{7223710C-5E1D-9A5E-478A-306F332300CB}|build\\build_files\\raylib-quickstart-main.vcxproj|C:\\Users\\gameuser\\Downloads\\Mobile-Draw-Project\\raylib-quickstart-main\\src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7223710C-5E1D-9A5E-478A-306F332300CB}|build\\build_files\\raylib-quickstart-main.vcxproj|solutionrelative:src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7223710C-5E1D-9A5E-478A-306F332300CB}|build\\build_files\\raylib-quickstart-main.vcxproj|C:\\Users\\Robin\\OneDrive\\Desktop\\Mobile-Draw-Project\\raylib-quickstart-main\\src\\raygui.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{7223710C-5E1D-9A5E-478A-306F332300CB}|build\\build_files\\raylib-quickstart-main.vcxproj|C:\\Users\\gameuser\\Downloads\\Mobile-Draw-Project\\raylib-quickstart-main\\src\\raygui.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7223710C-5E1D-9A5E-478A-306F332300CB}|build\\build_files\\raylib-quickstart-main.vcxproj|solutionrelative:src\\raygui.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -24,9 +24,9 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "raygui.h",
-              "DocumentMoniker": "C:\\Users\\Robin\\OneDrive\\Desktop\\Mobile-Draw-Project\\raylib-quickstart-main\\src\\raygui.h",
+              "DocumentMoniker": "C:\\Users\\gameuser\\Downloads\\Mobile-Draw-Project\\raylib-quickstart-main\\src\\raygui.h",
               "RelativeDocumentMoniker": "src\\raygui.h",
-              "ToolTip": "C:\\Users\\Robin\\OneDrive\\Desktop\\Mobile-Draw-Project\\raylib-quickstart-main\\src\\raygui.h",
+              "ToolTip": "C:\\Users\\gameuser\\Downloads\\Mobile-Draw-Project\\raylib-quickstart-main\\src\\raygui.h",
               "RelativeToolTip": "src\\raygui.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -37,24 +37,14 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "main.cpp",
-              "DocumentMoniker": "C:\\Users\\Robin\\OneDrive\\Desktop\\Mobile-Draw-Project\\raylib-quickstart-main\\src\\main.cpp",
+              "DocumentMoniker": "C:\\Users\\gameuser\\Downloads\\Mobile-Draw-Project\\raylib-quickstart-main\\src\\main.cpp",
               "RelativeDocumentMoniker": "src\\main.cpp",
-              "ToolTip": "C:\\Users\\Robin\\OneDrive\\Desktop\\Mobile-Draw-Project\\raylib-quickstart-main\\src\\main.cpp",
+              "ToolTip": "C:\\Users\\gameuser\\Downloads\\Mobile-Draw-Project\\raylib-quickstart-main\\src\\main.cpp",
               "RelativeToolTip": "src\\main.cpp",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAGgAAAAIAAAAAAAAAA==",
+              "ViewState": "AQIAAPYAAAAAAAAAAAAowBABAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-11-12T11:49:15.992Z",
               "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 927,
-          "SelectedChildIndex": -1,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             }
           ]
         }
