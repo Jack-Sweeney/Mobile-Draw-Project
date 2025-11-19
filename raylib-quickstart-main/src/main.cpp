@@ -30,8 +30,17 @@ int circleCount = 0;
 bool circleDrawing = false;
 Vector2 circleStart = { 0 };
 
-#define SAVE_FILE "rectangles.dat"
+int numRow = 70;
+int numCol = 100;
 
+
+typedef struct Pixel {
+    Rectangle rectangle;
+    
+    Color color;
+} Pixel;
+
+#define SAVE_FILE "rectangles.dat" 
 // Save function
 void SaveRectangles(Rect* rectangles, int rectCount) {
     FILE* file = fopen(SAVE_FILE, "wb");
@@ -71,6 +80,7 @@ int main() {
 
     // Variables
     Rect rectangles[MAX_RECTS];
+    Pixel canvas[128][128];
     int rectCount = 0;
     Color currentColor = BLACK;  // Default color for drawing rectangles
     Vector2 rectStart = { 0 };
@@ -94,11 +104,22 @@ int main() {
     int selectedColor = 0;
 
     SetTargetFPS(60);
+    for (int row = 0; row < numRow; row++)
+    {
+        for (int col = 0; col < numCol; col++)
+        {
+            canvas[row][col] = { { col * (float)10.0 + 100, row * (float)10.0,10,10 },GRAY };
 
+           
+        }
+
+    }
     // Main game loop
     while (!WindowShouldClose()) {
         // Update
        
+        
+
         DrawRectangle(0, 700, screenWidth, 150, DARKBROWN);
         //Eraser code
         Rectangle eraser = { 400, screenHeight - 80, 150, 30 };
@@ -340,8 +361,31 @@ int main() {
         BeginDrawing();
         ClearBackground(WHITE); 
 
-         
         
+        for (int row = 0; row < numRow; row++)
+        {
+            for (int col = 0; col < numCol; col++)
+            {
+                if (IsMouseButtonDown(MOUSE_LEFT_BUTTON)) {
+                    Vector2 mouse = GetMousePosition();
+                    if (CheckCollisionPointRec(mouse, canvas[row][col].rectangle))
+                    {
+                        canvas[row][col].color = palette[selectedColor];
+                    }
+                }
+            }
+
+        }
+        for (int row = 0; row < numRow; row++)
+        {
+            for (int col = 0; col < numCol; col++)
+            {
+
+
+                DrawRectangle(canvas[row][col].rectangle.x, canvas[row][col].rectangle.y, 10, 10, canvas[row][col].color);
+            }
+
+        }
         // Draw the palette buttons
         for (int i = 0; i < paletteSize; i++) {
             Rectangle colorButton = { 10 + 40 * i, screenHeight - 40, 30, 30 };
@@ -368,10 +412,10 @@ int main() {
                 }
         }
 
-        // Draw all stored rectangles
-        for (int i = 0; i < rectCount; i++) {
-            DrawRectangleRec({ rectangles[i].position.x, rectangles[i].position.y, rectangles[i].width, rectangles[i].height }, rectangles[i].color);
-        }
+        //// Draw all stored rectangles
+        //for (int i = 0; i < rectCount; i++) {
+        //    DrawRectangleRec({ rectangles[i].position.x, rectangles[i].position.y, rectangles[i].width, rectangles[i].height }, rectangles[i].color);
+        //}
 
         for (int i = 0; i < circleCount; i++) {
             DrawCircle(circles[i].center.x, circles[i].center.y,
