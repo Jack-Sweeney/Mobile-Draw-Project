@@ -1,5 +1,9 @@
 ﻿  raudio.c
-C:\Users\gameuser\Downloads\Mobile-Draw-Project\raylib-quickstart-main\build\external\raylib-master\src\external\jar_xm.h(242,9): warning C4005: 'DEBUG': macro redefinition
+D:\Mobile-Draw-Project\raylib-quickstart-main\build\external\raylib-master\src\external\jar_xm.h(242,9): warning C4005: 'DEBUG': macro redefinition
+  (compiling source file '../external/raylib-master/src/raudio.c')
+      D:\Mobile-Draw-Project\raylib-quickstart-main\build\external\raylib-master\src\external\jar_xm.h(242,9):
+      'DEBUG' previously declared on the command line
+  
   rcore.c
   rglfw.c
   rmodels.c
@@ -8,4 +12,4 @@ C:\Users\gameuser\Downloads\Mobile-Draw-Project\raylib-quickstart-main\build\ext
   rtextures.c
   utils.c
   Generating Code...
-  raylib.vcxproj -> C:\Users\gameuser\Downloads\Mobile-Draw-Project\raylib-quickstart-main\bin\Debug\raylib.lib
+  raylib.vcxproj -> D:\Mobile-Draw-Project\raylib-quickstart-main\bin\Debug\raylib.lib

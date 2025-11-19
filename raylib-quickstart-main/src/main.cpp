@@ -7,6 +7,9 @@
 #include <stdio.h>
 
 #define MAX_RECTS 1000
+#define MAX_CIRCLES 1000
+
+
 
 typedef struct Rect {
     Vector2 position;
@@ -14,6 +17,18 @@ typedef struct Rect {
     float height;
     Color color;
 } Rect;
+
+typedef struct Circle {
+    Vector2 center;
+    float radius;
+    Color color;
+} Circle;
+
+Circle circles[MAX_CIRCLES];
+int circleCount = 0;
+
+bool circleDrawing = false;
+Vector2 circleStart = { 0 };
 
 #define SAVE_FILE "rectangles.dat"
 
@@ -28,7 +43,7 @@ void SaveRectangles(Rect* rectangles, int rectCount) {
     }
     else {
         printf("Failed to open file for saving.\n");
-    }
+    } 
 }
 
 // Load function
@@ -50,7 +65,7 @@ int LoadRectangles(Rect* rectangles) {
 
 int main() {
     // Initialization
-    int screenWidth = 1000;
+    int screenWidth = 1200;
     int screenHeight = 800;
     InitWindow(screenWidth, screenHeight , "Simple Drawing Package - Rectangle Mode");
 
@@ -62,6 +77,7 @@ int main() {
     Vector2 rectEnd = { 0 };
     bool drawing = true;
     bool selectionMode = false;
+    bool circleMode = false;
     Rectangle selectionRect = { 0, 0, 0, 0 };
     bool selectionActive = false;
     Rect copyRect[MAX_RECTS];
@@ -85,28 +101,29 @@ int main() {
        
         DrawRectangle(0, 700, screenWidth, 150, DARKBROWN);
         //Eraser code
-        Rectangle eraser = { 200, screenHeight - 80, 150, 30 };
+        Rectangle eraser = { 400, screenHeight - 80, 150, 30 };
         if (GuiButton(eraser, "Eraser"))
         {
 
             currentColor = WHITE;
         }
 
-        Rectangle Clear = { 400, screenHeight - 80, 150, 30 };
+        Rectangle Clear = { 600, screenHeight - 80, 150, 30 };
         if (GuiButton(Clear, "Clear all"))
         {
             rectCount = 0; 
+            circleCount = 0;
             ClearBackground(WHITE);
         }
 
 
-        Rectangle Save = { 600, screenHeight - 80, 150, 30 };
+        Rectangle Save = { 800, screenHeight - 80, 150, 30 };
         if (GuiButton(Save, "Save"))
         {
             SaveRectangles(rectangles, rectCount);
         }
 
-        Rectangle Load = { 800, screenHeight - 80, 150, 30 };
+        Rectangle Load = { 1000, screenHeight - 80, 150, 30 };
         if (GuiButton(Load, "Load")) 
         {
             rectCount = LoadRectangles(rectangles);
@@ -117,6 +134,15 @@ int main() {
         {
             selectionMode = !selectionMode;
         }
+
+        Rectangle circleButton = { 200, screenHeight - 80, 150, 30 };
+        if (GuiButton(circleButton, circleMode ? "Circle Mode" : "Draw Circle")) {
+            circleMode = !circleMode;
+            circleDrawing = false;     // reset state
+            drawing = !circleMode;     // disable pixel drawing
+        }
+
+
         //Draw selection rectangle outline
         if (selectionMode == true)
         {
@@ -159,7 +185,8 @@ int main() {
             {
                
                      if (selectionActive == true) {
-                        if (rectStart.y < 700 && rectCount < MAX_RECTS) {
+                        if (rectStart.y < 700 && rectCount < MAX_RECTS && rectEnd.y < 700) 
+                        {
                             rectangles[rectCount].position.x = selectionRect.x;
                             rectangles[rectCount].position.y = selectionRect.y;
                             rectangles[rectCount].width = selectionRect.width;
@@ -223,8 +250,14 @@ int main() {
         }
         else
         {
-            drawing = true;
+            // Only enable rectangle drawing if NOT in circle mode
+            if (!circleMode)
+            {
+                drawing = true;
+            }
+           
         }
+
 
         if (drawing == true)
         {
@@ -245,6 +278,49 @@ int main() {
 
 
         }
+       
+        static Vector2 circleStart = { 0 };
+        static Vector2 circleEnd = { 0 }; 
+         
+        if (circleMode && !selectionMode) {
+
+            // Start drawing a new circle
+            if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+                Vector2 pos = GetMousePosition();
+
+                // Only allow drawing inside canvas area
+                if (pos.y < 700) {
+                    circleDrawing = true;
+                    circleStart = pos;
+                }
+            }
+
+            // When mouse is released, finalize the circle
+            if (circleDrawing && IsMouseButtonReleased(MOUSE_LEFT_BUTTON)) {
+                Vector2 mouse = GetMousePosition();
+                if (mouse.y >= 700) {
+                    circleDrawing = false;
+                    continue;
+                }
+
+
+                float dx = mouse.x - circleStart.x;
+                float dy = mouse.y - circleStart.y;
+                float radius = sqrtf(dx * dx + dy * dy);
+
+                if (circleCount < MAX_CIRCLES) {
+
+                    circles[circleCount].center = circleStart;
+                    circles[circleCount].radius = radius;
+                    circles[circleCount].color = currentColor;
+                    circleCount++;
+                }
+
+                circleDrawing = false;   // stop drawing 
+                
+            }
+        }
+
            
            
             
@@ -279,14 +355,30 @@ int main() {
         }
        
 
-      
+        // Draw circle preview while dragging
+        if (circleMode && circleDrawing) {
+            
+                Vector2 mouse = GetMousePosition();
+                float dx = mouse.x - circleStart.x;
+                float dy = mouse.y - circleStart.y;
+                float radius = sqrtf(dx * dx + dy * dy);
+                if (circleStart.y < 700 && circleCount < MAX_CIRCLES)
+                {
+                DrawCircleLines(circleStart.x, circleStart.y, radius, currentColor);
+                }
+        }
 
         // Draw all stored rectangles
         for (int i = 0; i < rectCount; i++) {
             DrawRectangleRec({ rectangles[i].position.x, rectangles[i].position.y, rectangles[i].width, rectangles[i].height }, rectangles[i].color);
         }
 
-        
+        for (int i = 0; i < circleCount; i++) {
+            DrawCircle(circles[i].center.x, circles[i].center.y,
+                circles[i].radius, circles[i].color);
+        }
+
+       
 
         // Draw the current rectangle if drawing
 
