@@ -1,28 +1,28 @@
 ﻿  main.cpp
-C:\Users\gameuser\Desktop\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(125,48): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\gameuser\Desktop\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(125,48): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\gameuser\Desktop\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(132,47): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\gameuser\Desktop\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(132,47): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\gameuser\Desktop\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(141,46): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\gameuser\Desktop\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(141,46): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\gameuser\Desktop\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(147,47): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\gameuser\Desktop\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(147,47): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\gameuser\Desktop\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(153,53): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\gameuser\Desktop\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(153,53): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\gameuser\Desktop\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(159,54): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\gameuser\Desktop\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(159,54): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\gameuser\Desktop\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(351,46): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\gameuser\Desktop\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(351,46): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\gameuser\Desktop\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(351,69): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\gameuser\Desktop\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(351,69): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\gameuser\Desktop\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(385,87): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\gameuser\Desktop\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(385,57): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\gameuser\Desktop\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(391,42): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\gameuser\Desktop\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(391,42): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\gameuser\Desktop\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(391,65): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\gameuser\Desktop\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(391,65): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\gameuser\Desktop\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(411,59): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\gameuser\Desktop\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(411,44): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\gameuser\Desktop\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(421,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\gameuser\Desktop\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(421,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  raylib-quickstart-main.vcxproj -> C:\Users\gameuser\Desktop\Mobile-Draw-Project\raylib-quickstart-main\bin\Debug\raylib-quickstart-main.exe
+D:\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(127,48): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+D:\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(127,48): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(134,47): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+D:\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(134,47): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(143,46): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+D:\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(143,46): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(149,47): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+D:\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(149,47): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(155,53): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+D:\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(155,53): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(161,54): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+D:\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(161,54): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(354,46): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+D:\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(354,46): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(354,69): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+D:\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(354,69): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(388,87): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(388,57): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(394,42): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+D:\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(394,42): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(394,65): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+D:\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(394,65): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(414,59): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(414,44): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(424,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\Mobile-Draw-Project\raylib-quickstart-main\src\main.cpp(424,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  raylib-quickstart-main.vcxproj -> D:\Mobile-Draw-Project\raylib-quickstart-main\bin\Debug\raylib-quickstart-main.exe

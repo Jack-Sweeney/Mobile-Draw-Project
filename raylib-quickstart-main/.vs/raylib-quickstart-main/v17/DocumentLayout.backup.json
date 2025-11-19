@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\gameuser\\Desktop\\Mobile-Draw-Project\\raylib-quickstart-main\\",
+  "WorkspaceRootPath": "D:\\Mobile-Draw-Project\\raylib-quickstart-main\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7223710C-5E1D-9A5E-478A-306F332300CB}|build\\build_files\\raylib-quickstart-main.vcxproj|C:\\Users\\gameuser\\Desktop\\Mobile-Draw-Project\\raylib-quickstart-main\\src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{7223710C-5E1D-9A5E-478A-306F332300CB}|build\\build_files\\raylib-quickstart-main.vcxproj|D:\\Mobile-Draw-Project\\raylib-quickstart-main\\src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7223710C-5E1D-9A5E-478A-306F332300CB}|build\\build_files\\raylib-quickstart-main.vcxproj|solutionrelative:src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -20,14 +20,24 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "main.cpp",
-              "DocumentMoniker": "C:\\Users\\gameuser\\Desktop\\Mobile-Draw-Project\\raylib-quickstart-main\\src\\main.cpp",
+              "DocumentMoniker": "D:\\Mobile-Draw-Project\\raylib-quickstart-main\\src\\main.cpp",
               "RelativeDocumentMoniker": "src\\main.cpp",
-              "ToolTip": "C:\\Users\\gameuser\\Desktop\\Mobile-Draw-Project\\raylib-quickstart-main\\src\\main.cpp",
+              "ToolTip": "D:\\Mobile-Draw-Project\\raylib-quickstart-main\\src\\main.cpp",
               "RelativeToolTip": "src\\main.cpp",
-              "ViewState": "AgIAABcAAAAAAAAAAAAAACoAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAH8AAAAAAAAAAAAqwJEAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-10T12:54:28.12Z",
               "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 927,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             }
           ]
         }

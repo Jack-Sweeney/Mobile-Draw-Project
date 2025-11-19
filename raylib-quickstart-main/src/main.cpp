@@ -40,36 +40,36 @@ typedef struct Pixel {
     Color color;
 } Pixel;
 
-#define SAVE_FILE "rectangles.dat" 
-// Save function
-void SaveRectangles(Rect* rectangles, int rectCount) {
-    FILE* file = fopen(SAVE_FILE, "wb");
-    if (file) {
-        fwrite(&rectCount, sizeof(int), 1, file); // Save the number of rectangles
-        fwrite(rectangles, sizeof(Rect), rectCount, file); // Save the rectangle data
-        fclose(file);
-        printf("Saved %d rectangles to file.\n", rectCount);
-    }
-    else {
-        printf("Failed to open file for saving.\n");
-    } 
+#define CANVAS_SAVE "canvas.dat"
+
+void SaveCanvas(Pixel canvas[][128], int rows, int cols) {
+    FILE* file = fopen(CANVAS_SAVE, "wb");
+    fwrite(&rows, sizeof(int), 1, file);
+    fwrite(&cols, sizeof(int), 1, file);
+
+    for (int r = 0; r < rows; r++)
+        for (int c = 0; c < cols; c++)
+            fwrite(&canvas[r][c].color, sizeof(Color), 1, file);
+
+    fclose(file);
+    printf("Canvas saved!\n");
 }
 
-// Load function
-int LoadRectangles(Rect* rectangles) {
-    FILE* file = fopen(SAVE_FILE, "rb");
-    int rectCount = 0;
-    if (file) {
-        fread(&rectCount, sizeof(int), 1, file); // Read the number of rectangles
-        fread(rectangles, sizeof(Rect), rectCount, file); // Read the rectangle data
-        fclose(file);
-        printf("Loaded %d rectangles from file.\n", rectCount);
-    }
-    else {
-        printf("Failed to open file for loading.\n");
-    }
-    return rectCount;
+void LoadCanvas(Pixel canvas[][128]) {
+    FILE* file = fopen(CANVAS_SAVE, "rb");
+    int rows, cols;
+
+    fread(&rows, sizeof(int), 1, file);
+    fread(&cols, sizeof(int), 1, file);
+
+    for (int r = 0; r < rows; r++)
+        for (int c = 0; c < cols; c++)
+            fread(&canvas[r][c].color, sizeof(Color), 1, file);
+
+    fclose(file);
+    printf("Canvas loaded!\n");
 }
+
 
 
 int main() {
@@ -114,6 +114,8 @@ int main() {
         }
 
     }
+
+
     // Main game loop
     while (!WindowShouldClose()) {
         // Update
@@ -141,13 +143,13 @@ int main() {
         Rectangle Save = { 800, screenHeight - 80, 150, 30 };
         if (GuiButton(Save, "Save"))
         {
-            SaveRectangles(rectangles, rectCount);
+            SaveCanvas(canvas, numRow, numCol);  
         }
 
         Rectangle Load = { 1000, screenHeight - 80, 150, 30 };
         if (GuiButton(Load, "Load")) 
         {
-            rectCount = LoadRectangles(rectangles);
+            LoadCanvas(canvas); 
         }
         //Selection mode and Drawing mode swap
         Rectangle toggleButton = { 10, screenHeight - 80, 150, 30 };
@@ -162,6 +164,7 @@ int main() {
             circleDrawing = false;     // reset state
             drawing = !circleMode;     // disable pixel drawing
         }
+
 
 
         //Draw selection rectangle outline
