@@ -127,16 +127,36 @@ int main() {
         Rectangle eraser = { 400, screenHeight - 80, 150, 30 };
         if (GuiButton(eraser, "Eraser"))
         {
+            currentColor = GRAY;
+            for (int row = 0; row < numRow; row++)
+            {
+                for (int col = 0; col < numCol; col++)
+                {
+                    if (IsMouseButtonDown(MOUSE_LEFT_BUTTON)) {
+                        Vector2 mouse = GetMousePosition();
+                        if (CheckCollisionPointRec(mouse, canvas[row][col].rectangle))
+                        {
+                            canvas[row][col].color = palette[selectedColor];
+                        }
+                    }
+                }
 
-            currentColor = WHITE;
+            }
+           
         }
 
         Rectangle Clear = { 600, screenHeight - 80, 150, 30 };
         if (GuiButton(Clear, "Clear all"))
         {
-            rectCount = 0; 
-            circleCount = 0;
-            ClearBackground(WHITE);
+            for (int row = 0; row < numRow; row++)
+            {
+                for (int col = 0; col < numCol; col++)
+                {
+                    canvas[row][col].color = GRAY;
+
+                }
+
+            }
         }
 
 
